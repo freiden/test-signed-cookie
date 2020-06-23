@@ -1,0 +1,17 @@
+<%= form_with(model: cooky, local: true) do |form| %>
+  <% if cooky.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cooky.errors.count, "error") %> prohibited this cooky from being saved:</h2>
+
+      <ul>
+        <% cooky.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
